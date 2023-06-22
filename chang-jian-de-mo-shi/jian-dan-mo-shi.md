@@ -8,18 +8,18 @@ description: 默认交换机
   * 1个生产者，发送1条消息给队列。1个消费者，接收消息并打印。
   *
 
-      ![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FSFBuFDF5VzeONIn6xons%2Fuploads%2FiLin9NBooF9w0pLqtciV%2Fimage.png?alt=media\&token=f1c7222b-0c59-4edc-8c42-cbb629946828)
+      ![](../imgs/1.png)
 * 2\. 实现
   * 2.1 生产者
     * 思路
       *
 
-          ![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FSFBuFDF5VzeONIn6xons%2Fuploads%2FWjd6U8gkuzvQ6NAjZVJL%2Fimage.png?alt=media\&token=39f13263-95c2-4c97-8d67-b4e268f75dc8)
+      ![](../imgs/2.png)
       * 生产者连接到RabbitMQ，发送一条消息，然后退出。
     * 代码
       *
 
-          ![](https://files.gitbook.com/v0/b/gitbook-x-prod.appspot.com/o/spaces%2FSFBuFDF5VzeONIn6xons%2Fuploads%2Fqorq4evxzEMxp3zTpjOV%2Fimage.png?alt=media\&token=34aa7039-de18-4d0f-b5e4-385c9357c2e4)
+      ![](../imgs/3.png)
     * 说明
       * 1.Connection和Channel接口都实现了AutoCloseable接口。所以可以使用try-with-resources语句，在代码块结束时自动关闭连接和信道，而不是在代码中明确地关闭它们。
       * 2.通过Channel可以进行与RabbitMQ的交互，而不需要频繁地创建和关闭Connection。一个连接可以有多个Channel。
