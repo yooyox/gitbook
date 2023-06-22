@@ -1,0 +1,461 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>工作队列 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="默认交换机">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="fa-bu-ding-yue.html" />
+    
+    
+    <link rel="prev" href="jian-dan-mo-shi.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">简介</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    小白入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">安装</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../an-zhuang/yong-docker-an-zhuang-rabbitmq.html">
+            
+                <a href="../an-zhuang/yong-docker-an-zhuang-rabbitmq.html">
+            
+                    
+                    用Docker安装RabbitMQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">常见的模式</li>
+        
+        
+    
+        <li class="chapter " data-level="3.1" data-path="jian-dan-mo-shi.html">
+            
+                <a href="jian-dan-mo-shi.html">
+            
+                    
+                    简单模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.2" data-path="gong-zuo-dui-lie.html">
+            
+                <a href="gong-zuo-dui-lie.html">
+            
+                    
+                    工作队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="fa-bu-ding-yue.html">
+            
+                <a href="fa-bu-ding-yue.html">
+            
+                    
+                    发布订阅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="lu-you.html">
+            
+                <a href="lu-you.html">
+            
+                    
+                    路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="zhu-ti.html">
+            
+                <a href="zhu-ti.html">
+            
+                    
+                    主题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >工作队列</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x5DE5;&#x4F5C;&#x961F;&#x5217;">&#x5DE5;&#x4F5C;&#x961F;&#x5217;</h1>
+<ul>
+<li><p>1. &#x9700;&#x6C42;</p>
+<ul>
+<li><p>1&#x4E2A;&#x751F;&#x4EA7;&#x8005;&#xFF0C;&#x591A;&#x6B21;&#x53D1;&#x9001;&#x6D88;&#x606F;&#x7ED9;&#x961F;&#x5217;&#x3002;&#x591A;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x4E00;&#x8D77;&#x6D88;&#x8D39;&#x961F;&#x5217;&#x4E2D;&#x7684;&#x6D88;&#x606F;&#x3002;
+*</p>
+<p>  <img src="https://lh6.googleusercontent.com/WX16URjhf1IrFl7xeVy00UfycOyJ8zoMXTw4P4oJHoGRyiObsx8H3v06\_VZ69TbeLYq0qUfMDM9XZehgnkxh8IQnCNEDr6IWu2KNDHOPwjbUK-3\_vz0PB05RUyvt276XX--3vPQ8zdhjDjFyU1\_2Jhs" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>2. &#x5B9E;&#x73B0;</p>
+<ul>
+<li><p>2.1 &#x751F;&#x4EA7;&#x8005;</p>
+<ul>
+<li>&#x601D;&#x8DEF;<ul>
+<li>&#x4ECE;&#x63A7;&#x5236;&#x53F0;&#x53D1;&#x9001;&#x6D88;&#x606F;</li>
+</ul>
+</li>
+<li><p>&#x4EE3;&#x7801;
+*</p>
+<pre><code>![](https://lh5.googleusercontent.com/2xwc\_oclzpEM5Wg8Gn0MLi3qOFgXtbG\_xV9mspXuxuqA1eqZiuRxkiz9zK1eYrqucKhlYZpbaKegODRKsL0U7EJJXZLt4i15sBWWAGTEJJ3uigHp4L0GSreS5osaZKj85ZW2n4awmM8N5OSFb66Uc\_8)
+</code></pre></li>
+</ul>
+</li>
+<li><p>2.2 &#x6D88;&#x8D39;&#x8005;</p>
+<ul>
+<li>&#x601D;&#x8DEF;<ul>
+<li>&#x5904;&#x7406;&#x6D88;&#x606F;&#x65F6;&#xFF0C;&#x6BCF;&#x9047;&#x5230;&#x4E00;&#x4E2A;&#x70B9;&#x5C31;&#x4F2A;&#x9020;&#x4E00;&#x79D2;&#x949F;&#x7684;&#x5904;&#x7406;&#x65F6;&#x957F;</li>
+</ul>
+</li>
+<li><p>&#x4EE3;&#x7801;
+*</p>
+<pre><code>![](https://lh3.googleusercontent.com/Fd9MnqGzkMU\_A-fPLyxXNv57PUCi1CjkGdhI14D6TWOi\_uvyx\_\_0CSQQt\_tBIaVwwGbrII-Xg1II7ICR3BrpgI-9IvYxNzY9\_tStctl1Omkm74SK4-b3e95LmD3KZinCctRSpiC9yaHwqmJB9mg3xYM)
+</code></pre></li>
+</ul>
+</li>
+<li><p>2.3 &#x7ED3;&#x679C;</p>
+<ul>
+<li><p>&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;RabbitMQ &#x4F1A;&#x5C06;&#x6BCF;&#x6761;&#x6D88;&#x606F;&#x6309;&#x987A;&#x5E8F;&#x53D1;&#x9001;&#x7ED9;&#x4E0B;&#x4E00;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#x3002;&#x4E0D;&#x4F1A;&#x8003;&#x8651;&#x6BCF;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#x5904;&#x7406;&#x6D88;&#x606F;&#x7684;&#x65F6;&#x957F;&#x3002;
+*</p>
+<p>  <img src="https://lh6.googleusercontent.com/ppRXAbdARMCQ5w2I3APST-yGmuCfp2cOzRgZndOn\_rR4BIwSrzabXZk6QsGSVMv8E7vtRGDA\_CBuYAl5XyWXU9-dxWcm1qnc1c\_k4ekNDa9whzBI6yWRKVkXq0eNTKkOZL4UFULcvrbHVCfPdyMkQhI" alt="">
+*</p>
+<p>  <img src="https://lh6.googleusercontent.com/fHOGm9qdIypl\_5YtaMetoJky\_xVFe\_LMKWfWQD1k0cNg1VW03KtvLCVCFRb6DFFW3s\_rx9zcACccCItHf-3rD39HtDXp4JVhEWLZGKvs4QYjzJQ1PgLV1pW5zsguKVoZy5OuhbZvWklZ8spGK33YoWg" alt="">
+*</p>
+<p>  <img src="https://lh6.googleusercontent.com/cy4W3XFPgbcFygRS\_ESjHRooruKNjweb0pCQeobcEo\_o48qoSqNU5anqdAoEsnVpJxBzNw2uhjXijy3Uit\_5O2I1SZfKy9YHHGeEDR2tSO14XV2N7fiF22G4hK0EfpEL87nkkK2CsIBgERP4jTKRQd4" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>3.&#x95EE;&#x9898;&#x2014;&#x2014;&#x6D88;&#x8D39;&#x8005;&#x6B7B;&#x4EA1;&#x5BFC;&#x81F4;&#x7684;&#x6D88;&#x606F;&#x4E22;&#x5931;</p>
+<ul>
+<li>3.1 &#x73B0;&#x8C61;<ul>
+<li>&#x5728;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x7684;&#x4EE3;&#x7801;&#x91CC;&#xFF0C;channel.basicConsume()&#x4E2D;&#x8BBE;&#x7F6E;&#x4E86;&#x81EA;&#x52A8;&#x5E94;&#x7B54;&#x4E3A;true&#xFF0C;&#x4E00;&#x65E6; RabbitMQ &#x5C06;&#x6D88;&#x606F;&#x4F20;&#x9012;&#x7ED9;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x6D88;&#x606F;&#x5C31;&#x4F1A;&#x4ECE;&#x961F;&#x5217;&#x4E2D;&#x88AB;&#x5220;&#x9664;&#x3002;&#x5982;&#x679C;&#x8FD9;&#x65F6;&#x7EC8;&#x6B62;&#x4E00;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x8BE5;&#x6D88;&#x8D39;&#x8005;&#x672A;&#x5904;&#x7406;&#x5B8C;&#x7684;&#x6D88;&#x606F;&#x5C06;&#x4F1A;&#x4E22;&#x5931;&#x3002;</li>
+</ul>
+</li>
+<li>3.2 &#x671F;&#x671B;<ul>
+<li>&#x5982;&#x679C;&#x7EC8;&#x6B62;&#x4E00;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x6CA1;&#x5904;&#x7406;&#x5B8C;&#x7684;&#x6D88;&#x606F;&#x91CD;&#x65B0;&#x56DE;&#x5F52;&#x961F;&#x5217;&#xFF0C;&#x5E76;&#x88AB;&#x91CD;&#x65B0;&#x6295;&#x9001;&#x7ED9;&#x53E6;&#x4E00;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#x3002;</li>
+</ul>
+</li>
+<li>3.3 &#x89E3;&#x51B3;<ul>
+<li>&#x8FDB;&#x884C;&#x6D88;&#x606F;&#x786E;&#x8BA4;&#x3002;&#x6D88;&#x8D39;&#x8005;&#x5728;&#x63A5;&#x6536;&#x3001;&#x5904;&#x7406;&#x5B8C;&#x6D88;&#x606F;&#x4EE5;&#x540E;&#xFF0C;&#x53D1;&#x9001;ack&#x544A;&#x8BC9;RabbitMQ&#x53EF;&#x4EE5;&#x5220;&#x9664;&#x8BE5;&#x6D88;&#x606F;&#x4E86;&#x3002;&#x5982;&#x679C;RabbitMQ&#x6CA1;&#x6709;&#x6536;&#x5230;ack&#xFF0C;&#x5C31;&#x4F1A;&#x5C06;&#x6D88;&#x606F;&#x91CD;&#x65B0;&#x6392;&#x961F;&#x548C;&#x6295;&#x9012;&#x3002;</li>
+</ul>
+</li>
+<li><p>3.4 &#x5B9E;&#x73B0;</p>
+<ul>
+<li><p>&#x5173;&#x95ED;&#x81EA;&#x52A8;&#x5E94;&#x7B54;&#xFF0C;&#x8BBE;&#x7F6E;&#x624B;&#x52A8;&#x5E94;&#x7B54;&#x3002;
+*</p>
+<p>  <img src="https://lh3.googleusercontent.com/II3LbJdDYw-vgUpOA7HiE2VJ2g1P6rfHX9J5Ydmf3\_Z4tVW4YPq2\_jnB\_odUa1zRqe\_0zRKC7E64B0CLQ\_lN3wajkAZplUlStBE\_PxtdWSMOAleEXkQ\_bIxzOtHuPRKY8SQ3EPiBj9ADqXKVobAW63A" alt=""></p>
+</li>
+<li><p>&#x751F;&#x4EA7;&#x8005;&#x53D1;&#x6D88;&#x606F;&#xFF0C;&#x6D88;&#x8D39;&#x8005;1&#x6B63;&#x5728;&#x5904;&#x7406;&#x6D88;&#x606F;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x65AD;&#x5F00;&#xFF0C;&#x6B64;&#x65F6;1&#x6CA1;&#x5904;&#x7406;&#x5B8C;&#x7684;&#x6D88;&#x606F;&#x4F1A;&#x7ED9;2&#x5904;&#x7406;&#x3002;
+*</p>
+<p>  <img src="https://lh6.googleusercontent.com/j5DbQ411IQufWA6Ium0ZYNc0pC-z3QqJNaMUdZZNgk0TjnRC5JSRbfaBgbXFQROm80GEAMR0QbnGTnBawHtLzLUIwSHK4G\_bBSQVeJl3ynPZwXWIjIAloqL0NURbWbC6sqniAWDyKBN\_W8vMjA9eABs" alt="">
+*</p>
+<p>  <img src="https://lh6.googleusercontent.com/6FpqtGVVIl0xCEtRC0Y8osqZ3wgXLqVc--lWR3N1Sk0KG-NZmdqoA01hI0jmJ24cehvRhjaH5LSP1P4gmII9GzvAmvyAKHaCUuZvxlp82nW16xbAorQULzl3eyTsLc89JQaIoxiRleLTLSg65SMrJCU" alt="">
+*</p>
+<p>  <img src="https://lh5.googleusercontent.com/Kxpy7sx0qgCMsGvG6PN8TXmSSYte5\_miqGW2MtZBl-2VcKHZQ68cbvGhM0U8CZFn600x0gLRVB46tqlYziOpoOdxVp9zukFG70YuVzOJYjKEsxCgbCNLeq2U7B8hI7aYpC4-xJaun7ef3Yten466Zmg" alt=""></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>4.&#x95EE;&#x9898;&#x2014;&#x2014;RabbitMQ&#x670D;&#x52A1;&#x5668;&#x505C;&#x6B62;&#x5BFC;&#x81F4;&#x7684;&#x6D88;&#x606F;&#x4E22;&#x5931;</p>
+<ul>
+<li>4.1 &#x73B0;&#x8C61;<ul>
+<li>&#x5F53; RabbitMQ &#x9000;&#x51FA;&#x6216;&#x5D29;&#x6E83;&#x65F6;&#xFF0C;&#x91CD;&#x542F;&#x540E;&#x5B83;&#x4F1A;&#x5FD8;&#x8BB0;&#x961F;&#x5217;&#x548C;&#x6D88;&#x606F;&#x3002;</li>
+</ul>
+</li>
+<li>4.2 &#x671F;&#x671B;<ul>
+<li>&#x91CD;&#x542F;RabbitMQ&#x540E;&#xFF0C;&#x6D88;&#x606F;&#x548C;&#x961F;&#x5217;&#x8FD8;&#x5728;&#x3002;</li>
+</ul>
+</li>
+<li>4.3 &#x89E3;&#x51B3;<ul>
+<li>&#x5C06;&#x961F;&#x5217;&#x548C;&#x6D88;&#x606F;&#x90FD;&#x6301;&#x4E45;&#x5316;</li>
+</ul>
+</li>
+<li><p>4.4 &#x5B9E;&#x73B0;</p>
+<ul>
+<li><p>&#x961F;&#x5217;&#x6301;&#x4E45;&#x5316;</p>
+<ul>
+<li><p>channel.queueDeclare()&#x4E2D;&#xFF0C;&#x8BBE;&#x7F6E;durable = true&#x3002;&#x5982;&#x679C;&#x961F;&#x5217;&#x5DF2;&#x7ECF;&#x88AB;&#x5B9A;&#x4E49;&#x4E3A;&#x975E;&#x6301;&#x4E45;&#x5316;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x5B83;&#x5220;&#x9664;&#xFF0C;&#x518D;&#x8BBE;&#x7F6E;&#x4E3A;&#x6301;&#x4E45;&#x5316;&#x3002;
+*</p>
+<p>  <img src="https://lh6.googleusercontent.com/Im7MDhF-sF-bSAqDYyvw7-xn1C5QCqkgBKiYxAlncyDCyVaD8xb3x-yO6l3AbpGiE37OSERZdLa9zmzFeZoHIVnnJBToCsGmHsUBYku5dW4kl23pRB0-9Jbx-rEPlBhtIlNJA07JES\_eEcBZ8IMc6bs" alt=""></p>
+</li>
+</ul>
+</li>
+<li>&#x6D88;&#x606F;&#x6301;&#x4E45;&#x5316;<ul>
+<li>channel.basicPublish()&#x4E2D;&#xFF0C;&#x8BBE;&#x7F6E;props&#x4E3A;MessageProperties.PERSISTENT_TEXT_PLAIN&#x3002;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>5. &#x95EE;&#x9898;&#x2014;&#x2014;&#x5747;&#x5300;&#x53D1;&#x6D88;&#x606F;&#x5BFC;&#x81F4;&#x7684;&#x4E0D;&#x516C;&#x5E73;</p>
+<ul>
+<li>5.1 &#x73B0;&#x8C61;<ul>
+<li>RabbitMQ&#x5206;&#x53D1;&#x6D88;&#x606F;&#x65F6;&#xFF0C;&#x6CA1;&#x6709;&#x8003;&#x8651;&#x6D88;&#x8D39;&#x8005;&#x7684;&#x5904;&#x7406;&#x901F;&#x5EA6;&#x3002;&#x6BD4;&#x5982;&#x6709;&#x4E24;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x5F53;&#x5947;&#x6570;&#x6D88;&#x606F;&#x5927;&#xFF0C;&#x5076;&#x6570;&#x6D88;&#x606F;&#x5C0F;&#x65F6;&#xFF0C;&#x4E00;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#x4F1A;&#x4E00;&#x76F4;&#x5F88;&#x5FD9;&#xFF0C;&#x53E6;&#x4E00;&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#x51E0;&#x4E4E;&#x4E0D;&#x505A;&#x4EFB;&#x4F55;&#x5DE5;&#x4F5C;&#x3002;</li>
+</ul>
+</li>
+<li>5.2 &#x671F;&#x671B;<ul>
+<li>&#x5728;&#x6D88;&#x8D39;&#x8005;&#x6CA1;&#x5904;&#x7406;&#x5B8C;&#x4E00;&#x6761;&#x6D88;&#x606F;&#x524D;&#xFF0C;&#x4E0D;&#x8981;&#x5411;&#x5B83;&#x53D1;&#x9001;&#x65B0;&#x6D88;&#x606F;&#x3002;&#x800C;&#x662F;&#x628A;&#x65B0;&#x6D88;&#x606F;&#x53D1;&#x7ED9;&#x5176;&#x4ED6;&#x7A7A;&#x95F2;&#x7684;&#x6D88;&#x8D39;&#x8005;&#x3002;</li>
+</ul>
+</li>
+<li><p>5.3 &#x89E3;&#x51B3;
+*</p>
+<pre><code>![](https://lh6.googleusercontent.com/DoF09uPkjqDlAZ\_xlx5IO-1LRUdQE33mh-VLt6B0csEr1bziOOK4IovP6sVbwNHy2UdKzJQdooUfom5NmpyvuJNvaLrxIWzbPfNGqKa\_Ht\_\_CkTOo8\_bGEvwShxi\_OwGbAFNs5Y-ncIk1FwUCn79Fs8)
+</code></pre><ul>
+<li>&#x9650;&#x5236;RabbitMQ&#x53D1;&#x9001;&#x5230;&#x6D88;&#x8D39;&#x8005;&#x7684;&#x4FE1;&#x9053;&#x6D88;&#x606F;&#x5806;&#x79EF;&#x6570;&#x3002;&#x8F6E;&#x8BE2;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x4FE1;&#x9053;&#x6D88;&#x606F;&#x5806;&#x79EF;&#x6570;&#x6EE1;&#x4E86;&#x5C31;&#x8DF3;&#x8FC7;&#x8BE5;&#x6D88;&#x8D39;&#x8005;&#x3002;</li>
+</ul>
+</li>
+<li>5.4 &#x5B9E;&#x73B0;<ul>
+<li>channel.basicQos(&#x6D88;&#x606F;&#x5806;&#x79EF;&#x6570;);</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="jian-dan-mo-shi.html" class="navigation navigation-prev " aria-label="Previous page: 简单模式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="fa-bu-ding-yue.html" class="navigation navigation-next " aria-label="Next page: 发布订阅">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"description":"默认交换机","title":"工作队列","level":"3.2","depth":1,"next":{"title":"发布订阅","level":"3.3","depth":1,"path":"chang-jian-de-mo-shi/fa-bu-ding-yue.md","ref":"chang-jian-de-mo-shi/fa-bu-ding-yue.md","articles":[]},"previous":{"title":"简单模式","level":"3.1","depth":1,"path":"chang-jian-de-mo-shi/jian-dan-mo-shi.md","ref":"chang-jian-de-mo-shi/jian-dan-mo-shi.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chang-jian-de-mo-shi/gong-zuo-dui-lie.md","mtime":"2023-06-22T13:24:32.710Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-22T15:04:33.698Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

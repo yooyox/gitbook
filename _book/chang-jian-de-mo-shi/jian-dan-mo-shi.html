@@ -1,0 +1,415 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>简单模式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="默认交换机">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="gong-zuo-dui-lie.html" />
+    
+    
+    <link rel="prev" href="../an-zhuang/yong-docker-an-zhuang-rabbitmq.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        <li class="header">简介</li>
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    小白入门
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">安装</li>
+        
+        
+    
+        <li class="chapter " data-level="2.1" data-path="../an-zhuang/yong-docker-an-zhuang-rabbitmq.html">
+            
+                <a href="../an-zhuang/yong-docker-an-zhuang-rabbitmq.html">
+            
+                    
+                    用Docker安装RabbitMQ
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+        
+        <li class="header">常见的模式</li>
+        
+        
+    
+        <li class="chapter active" data-level="3.1" data-path="jian-dan-mo-shi.html">
+            
+                <a href="jian-dan-mo-shi.html">
+            
+                    
+                    简单模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="gong-zuo-dui-lie.html">
+            
+                <a href="gong-zuo-dui-lie.html">
+            
+                    
+                    工作队列
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="fa-bu-ding-yue.html">
+            
+                <a href="fa-bu-ding-yue.html">
+            
+                    
+                    发布订阅
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="lu-you.html">
+            
+                <a href="lu-you.html">
+            
+                    
+                    路由
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="3.5" data-path="zhu-ti.html">
+            
+                <a href="zhu-ti.html">
+            
+                    
+                    主题
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >简单模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x7B80;&#x5355;&#x6A21;&#x5F0F;">&#x7B80;&#x5355;&#x6A21;&#x5F0F;</h1>
+<ul>
+<li><p>1. &#x9700;&#x6C42;</p>
+<ul>
+<li><p>1&#x4E2A;&#x751F;&#x4EA7;&#x8005;&#xFF0C;&#x53D1;&#x9001;1&#x6761;&#x6D88;&#x606F;&#x7ED9;&#x961F;&#x5217;&#x3002;1&#x4E2A;&#x6D88;&#x8D39;&#x8005;&#xFF0C;&#x63A5;&#x6536;&#x6D88;&#x606F;&#x5E76;&#x6253;&#x5370;&#x3002;
+*</p>
+<p>  <img src="../imgs/1.png" alt=""></p>
+</li>
+</ul>
+</li>
+<li><p>2. &#x5B9E;&#x73B0;</p>
+<ul>
+<li><p>2.1 &#x751F;&#x4EA7;&#x8005;</p>
+<ul>
+<li><p>&#x601D;&#x8DEF;
+*</p>
+<p><img src="../imgs/2.png" alt=""></p>
+<ul>
+<li>&#x751F;&#x4EA7;&#x8005;&#x8FDE;&#x63A5;&#x5230;RabbitMQ&#xFF0C;&#x53D1;&#x9001;&#x4E00;&#x6761;&#x6D88;&#x606F;&#xFF0C;&#x7136;&#x540E;&#x9000;&#x51FA;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x4EE3;&#x7801;
+*</p>
+<p><img src="../imgs/3.png" alt=""></p>
+</li>
+<li>&#x8BF4;&#x660E;<ul>
+<li>1.Connection&#x548C;Channel&#x63A5;&#x53E3;&#x90FD;&#x5B9E;&#x73B0;&#x4E86;AutoCloseable&#x63A5;&#x53E3;&#x3002;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;try-with-resources&#x8BED;&#x53E5;&#xFF0C;&#x5728;&#x4EE3;&#x7801;&#x5757;&#x7ED3;&#x675F;&#x65F6;&#x81EA;&#x52A8;&#x5173;&#x95ED;&#x8FDE;&#x63A5;&#x548C;&#x4FE1;&#x9053;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x660E;&#x786E;&#x5730;&#x5173;&#x95ED;&#x5B83;&#x4EEC;&#x3002;</li>
+<li>2.&#x901A;&#x8FC7;Channel&#x53EF;&#x4EE5;&#x8FDB;&#x884C;&#x4E0E;RabbitMQ&#x7684;&#x4EA4;&#x4E92;&#xFF0C;&#x800C;&#x4E0D;&#x9700;&#x8981;&#x9891;&#x7E41;&#x5730;&#x521B;&#x5EFA;&#x548C;&#x5173;&#x95ED;Connection&#x3002;&#x4E00;&#x4E2A;&#x8FDE;&#x63A5;&#x53EF;&#x4EE5;&#x6709;&#x591A;&#x4E2A;Channel&#x3002;</li>
+<li>3.&#x58F0;&#x660E;&#x961F;&#x5217;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;<ul>
+<li><code>AMQP.Queue.DeclareOk queueDeclare( String queue, boolean durable, boolean exclusive, boolean autoDelete, java.util.Map&lt;String, Object&gt; arguments ) throws java.io.IOException</code></li>
+<li>&#x5728;&#x53D1;&#x9001;&#x548C;&#x63A5;&#x6536;&#x6D88;&#x606F;&#x4E4B;&#x524D;&#xFF0C;&#x9700;&#x8981;&#x5148;&#x58F0;&#x660E;&#x961F;&#x5217;&#xFF0C;&#x7528;&#x6765;&#x786E;&#x4FDD;&#x76EE;&#x6807;&#x961F;&#x5217;&#x662F;&#x5B58;&#x5728;&#x7684;&#x3002;</li>
+<li>queue&#xFF1A;&#x961F;&#x5217;&#x540D;&#x3002;</li>
+<li>durable&#xFF1A;&#x961F;&#x5217;&#x662F;&#x5426;&#x6301;&#x4E45;&#x5316;&#x3002;true&#xFF1A;RabbitMQ&#x91CD;&#x542F;&#x540E;&#x4ECD;&#x7136;&#x5B58;&#x5728;&#x3002;false&#xFF1A;RabbitMQ&#x670D;&#x52A1;&#x5668;&#x91CD;&#x542F;&#x540E;&#x4E0D;&#x5B58;&#x5728;&#x3002;</li>
+<li>exclusive&#xFF1A;&#x662F;&#x5426;&#x6392;&#x4ED6;&#x3002;true&#xFF1A;&#x961F;&#x5217;&#x53EA;&#x80FD;&#x88AB;&#x5F53;&#x524D;Connection&#x4F7F;&#x7528;&#xFF0C;&#x5E76;&#x5728;Connection&#x5173;&#x95ED;&#x540E;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x3002;</li>
+<li>autoDelete&#xFF1A;&#x662F;&#x5426;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x3002;true&#xFF1A;&#x5728;&#x6CA1;&#x6709;&#x6D88;&#x8D39;&#x8005;&#x4F7F;&#x7528;&#x65F6;&#x81EA;&#x52A8;&#x5220;&#x9664;&#x3002; arguments&#xFF1A;&#x5176;&#x4ED6;&#x53C2;&#x6570;&#x3002;&#x53EF;&#x4EE5;&#x914D;&#x7F6E;&#x961F;&#x5217;&#x7684;&#x5176;&#x4ED6;&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#x6D88;&#x606F;&#x7684;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x3001;&#x961F;&#x5217;&#x6700;&#x5927;&#x957F;&#x5EA6;&#x3002;</li>
+</ul>
+</li>
+<li>4.&#x53D1;&#x9001;&#x6D88;&#x606F;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;<ul>
+<li><code>void basicPublish( String exchange, String routingKey, com.rabbitmq.client.AMQP.BasicProperties props, byte[] body ) throws java.io.IOException</code></li>
+<li>exchange&#xFF1A;&#x4EA4;&#x6362;&#x673A;&#x540D;&#x79F0;&#x3002;&#x5982;&#x679C;&#x4E3A;&#x7A7A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x4EA4;&#x6362;&#x673A;&#x3002;&#x6D88;&#x606F;&#x7684;&#x8DEF;&#x7531;&#x952E;&#x4E0E;&#x961F;&#x5217;&#x540D;&#x8FDB;&#x884C;&#x5339;&#x914D;&#xFF0C;&#x5339;&#x914D;&#x6210;&#x529F;&#x5C31;&#x5C06;&#x6D88;&#x606F;&#x8F6C;&#x53D1;&#x5230;&#x8BE5;&#x961F;&#x5217;&#x3002; routingKey&#xFF1A;&#x6D88;&#x606F;&#x7684;&#x8DEF;&#x7531;&#x952E;&#x3002;Exchange&#x6839;&#x636E;&#x8DEF;&#x7531;&#x952E;&#x5C06;&#x6D88;&#x606F;&#x53D1;&#x9001;&#x5230;&#x5339;&#x914D;&#x7684;&#x961F;&#x5217;&#x3002;</li>
+<li>props&#xFF1A;&#x6D88;&#x606F;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x5982;&#x6301;&#x4E45;&#x5316;&#x3001;&#x8FC7;&#x671F;&#x65F6;&#x95F4;&#x3002;</li>
+<li>body&#xFF1A;&#x6D88;&#x606F;&#x7684;&#x5B57;&#x8282;&#x6570;&#x7EC4;&#x3002;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2.2 &#x6D88;&#x8D39;&#x8005;</p>
+<ul>
+<li><p>&#x601D;&#x8DEF;
+*</p>
+<pre><code>![](https://lh3.googleusercontent.com/e\_1LUjQQDRXz\_6Igg6Jtm\_DoLPInW\_-Ivl7e7XQwCtNQnzoMW4JkXX-pRfELF8ysFUVwJQKDiEYpLrNzcsQAhDo-z9RUYlIRO9lWT4MERd9qo-FvEUrSPWkx5QXpbGtEtm-OlzdhUcTZoEfI0wXyJbs)
+</code></pre><ul>
+<li>&#x6D88;&#x8D39;&#x8005;&#x76D1;&#x542C;&#x6765;&#x81EA;RabbitMQ&#x7684;&#x6D88;&#x606F;&#x3002;&#x6536;&#x5230;&#x6D88;&#x606F;&#x540E;&#x628A;&#x6D88;&#x606F;&#x6253;&#x5370;&#x51FA;&#x6765;&#x3002;</li>
+</ul>
+</li>
+<li><p>&#x4EE3;&#x7801;
+*</p>
+<pre><code>![](https://lh3.googleusercontent.com/1eKScImsNrD0g\_SFHFnRczoJhNewfMBxwTClH6IsYWmSiTBKEw5uAw0RVni7uC2xAeOSuUwR3MiMtAATLGDyknXEvWGh3kjPpdlwSbo8yv2qtmkQ8\_eaKDH1g3b8HTuHHJl3J3gNiDIy4tHv7YWEMJM)
+</code></pre></li>
+<li>&#x8BF4;&#x660E;<ul>
+<li>1.&#x548C;&#x751F;&#x4EA7;&#x8005;&#x4E0D;&#x540C;&#xFF0C;&#x6D88;&#x8D39;&#x8005;&#x4E0D;&#x4F7F;&#x7528; try-with-resource &#x8BED;&#x53E5;&#x6765;&#x81EA;&#x52A8;&#x5173;&#x95ED;&#x901A;&#x9053;&#x548C;&#x8FDE;&#x63A5;&#x3002;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x6D88;&#x8D39;&#x8005;&#x80FD;&#x4E00;&#x76F4;&#x5F02;&#x6B65;&#x76D1;&#x542C;&#x6D88;&#x606F;&#x3002;</li>
+<li>2.&#x63A5;&#x6536;&#x6D88;&#x606F;&#x7684;&#x65B9;&#x6CD5;<ul>
+<li><code>String basicConsume(String queue, boolean autoAck, com.rabbitmq.client.DeliverCallback deliverCallback, com.rabbitmq.client.CancelCallback cancelCallback ) throws java.io.IOException</code></li>
+<li>queue&#xFF1A;&#x6D88;&#x8D39;&#x7684;&#x961F;&#x5217;&#x540D;&#x3002;</li>
+<li>autoAck&#xFF1A;&#x662F;&#x5426;&#x81EA;&#x52A8;&#x6D88;&#x606F;&#x786E;&#x8BA4;&#x3002;true&#xFF1A;&#x6D88;&#x606F;&#x4E00;&#x65E6;&#x88AB;&#x6295;&#x9012;&#x7ED9;&#x6D88;&#x8D39;&#x8005;&#xFF0C;RabbitMQ&#x8BA4;&#x4E3A;&#x8BE5;&#x6D88;&#x606F;&#x5DF2;&#x7ECF;&#x88AB;&#x6D88;&#x8D39;&#x5E76;&#x5904;&#x7406;&#x5B8C;&#x6210;&#xFF0C; &#x5C06;&#x7ACB;&#x5373;&#x5C06;&#x8BE5;&#x6D88;&#x606F;&#x4ECE;&#x961F;&#x5217;&#x4E2D;&#x79FB;&#x9664;&#x3002;false&#xFF1A;&#x9700;&#x8981;&#x624B;&#x52A8;&#x8C03;&#x7528;channel.basicAck()&#x6765;&#x786E;&#x8BA4;&#x6D88;&#x606F;&#x3002;</li>
+<li>deliverCallback&#xFF1A;&#x6D88;&#x606F;&#x63A5;&#x6536;&#x5230;&#x65F6;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x5904;&#x7406;&#x63A5;&#x6536;&#x5230;&#x7684;&#x6D88;&#x606F;&#x3002;</li>
+<li>cancelCallback&#xFF1A;&#x53D6;&#x6D88;&#x63A5;&#x6536;&#x6D88;&#x606F;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>2.3 &#x8FD0;&#x884C;&#x7ED3;&#x679C;</p>
+<ul>
+<li><p>1.&#x8FD0;&#x884C;&#x751F;&#x4EA7;&#x8005;&#x4EE3;&#x7801;&#xFF0C;hello&#x961F;&#x5217;&#x4F1A;&#x6709;&#x4E00;&#x6761;&#x6D88;&#x606F;
+*</p>
+<pre><code>![](https://lh4.googleusercontent.com/pY0ChR3CozXWN9qukXfpEL2WETRS4DjzYEb99-L0DxQE7QrADA5q2nAG8LA\_diIW-esQ2JvoTVuCbib-DTZuKRWEGo97nrrWufyE7KroAkj4GstikSB6AaM42Q74xdtQUX4y4U2FWymWgQmwpxEtL0k)
+</code></pre></li>
+<li><p>2.&#x8FD0;&#x884C;&#x6D88;&#x8D39;&#x8005;&#x4EE3;&#x7801;&#xFF0C;hello&#x961F;&#x5217;&#x4E2D;&#x7684;&#x6D88;&#x606F;&#x4F1A;&#x88AB;&#x6D88;&#x8D39;&#x3002;&#x63A7;&#x5236;&#x53F0;&#x6253;&#x5370;&#x51FA;&#x88AB;&#x6D88;&#x8D39;&#x7684;&#x6D88;&#x606F;</p>
+<p>*</p>
+<pre><code>![](https://lh3.googleusercontent.com/\_Nf3AF8Testc0VRXxMPTWccnX6z3\_nVd\_7Ts\_5Q3OwonY-xh1HbF9iJ095HRCZr5pfLf3UhN9pspEK7YNvVPe0lSX0m8XQZEhwVqhcDNUzaFYUt4YcNFpCB\_T2E\_VmRPj2oa1fPi1oJECG\_rnzCwibk)
+</code></pre><p>*</p>
+<pre><code>![](https://lh3.googleusercontent.com/T8uUNZzNge-BIj\_\_nX5KOpDb6BzCP0bIwo\_Ikl5LM0pGOHyuHXtV1QnV2YortPdOnUnA7LvkcsZxWsClctAQiDH27Xhqq3KgNLNRede9JEPRciCna9yiOq-xZ0\_w3M\_JCn1WbnBZWNt2EpQemHm8Z2o)
+</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../an-zhuang/yong-docker-an-zhuang-rabbitmq.html" class="navigation navigation-prev " aria-label="Previous page: 用Docker安装RabbitMQ">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="gong-zuo-dui-lie.html" class="navigation navigation-next " aria-label="Next page: 工作队列">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"description":"默认交换机","title":"简单模式","level":"3.1","depth":1,"next":{"title":"工作队列","level":"3.2","depth":1,"path":"chang-jian-de-mo-shi/gong-zuo-dui-lie.md","ref":"chang-jian-de-mo-shi/gong-zuo-dui-lie.md","articles":[]},"previous":{"title":"用Docker安装RabbitMQ","level":"2.1","depth":1,"path":"an-zhuang/yong-docker-an-zhuang-rabbitmq.md","ref":"an-zhuang/yong-docker-an-zhuang-rabbitmq.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"chang-jian-de-mo-shi/jian-dan-mo-shi.md","mtime":"2023-06-22T14:53:57.824Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2023-06-22T15:04:33.698Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
