@@ -8,7 +8,7 @@ description: 默认交换机
   * 1个生产者，发送1条消息给队列。1个消费者，接收消息并打印。
   *
 
-      ![](https://github.com/username/repository/tree/master/imgs/1.png)
+      ![](https://github.com/yooyox/gitbook/blob/master/imgs/1.png)
 * 2\. 实现
   * 2.1 生产者
     * 思路
